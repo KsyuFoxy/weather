@@ -1,0 +1,84 @@
+.content {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lavender;
+    border-radius: 5px;
+}
+input {
+    margin: 10px;
+    padding: 6px;
+    border: 1px solid lightsteelblue;
+    border-radius: 4px;
+}
+h1, p {
+    font-family: sans-serif;
+    color: darkslategray;
+    margin: 20px;
+}
+img {
+    width: 100%;
+}
+.bold-span {
+    font-weight: bold;
+}
+button {
+    width: 50px;
+    padding: 7px;
+    background-color: lightsteelblue;
+    color: darkslategray;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: darkslategray;
+    color: white;
+}
+.weather-container {
+    width: 55%;
+    height: 80px;
+    padding: 10px;
+    margin: 25px auto;
+    border-radius: 10px;
+    background-color: lightsteelblue;
+}
+.weather {
+    position: absolute;
+    width: 32%;
+}
+.weather div {
+    display: inline-block;
+    font-family: sans-serif;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: middle;
+    margin: 0 25px;
+    color: darkslategray;
+}
+.close {
+    position: relative;
+    float: right;
+    width: 40px;
+    cursor: pointer;
+    font-family: sans-serif;
+    color: lavender;
+    z-index: 1;
+}
+.close:hover {
+    color: darkslategrey;
+}
+.colors {
+    position: absolute;
+    top: 6%;
+    left: 70%;
+}
+.colors div {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid lightsteelblue;
+}
