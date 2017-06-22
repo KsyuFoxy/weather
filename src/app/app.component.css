@@ -1,7 +1,7 @@
 .content {
-    width: 60%;
-    margin: 50px auto;
-    padding: 20px;
+    width: 80%;
+    margin: 2em auto;
+    padding: 1em;
     text-align: center;
     background-color: lavender;
     border-radius: 5px;
@@ -15,7 +15,7 @@ input {
 h1, p {
     font-family: sans-serif;
     color: darkslategray;
-    margin: 20px;
+    margin: 1em;
 }
 img {
     width: 100%;
@@ -37,31 +37,30 @@ button:hover {
     color: white;
 }
 .weather-container {
-    width: 55%;
-    height: 80px;
-    padding: 10px;
-    margin: 25px auto;
+    width: 70%;
+    height: 18em;
+    padding: 0.6em;
+    margin: 1em auto;
     border-radius: 10px;
     background-color: lightsteelblue;
 }
 .weather {
     position: absolute;
-    width: 32%;
+    width: 53%;
 }
 .weather div {
     display: inline-block;
     font-family: sans-serif;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
+    width: 20%;
+    line-height: 1em;
     vertical-align: middle;
-    margin: 0 25px;
+    margin: 0 0.5em;
     color: darkslategray;
 }
 .close {
     position: relative;
     float: right;
-    width: 40px;
+    width: 1em;
     cursor: pointer;
     font-family: sans-serif;
     color: lavender;
@@ -72,8 +71,9 @@ button:hover {
 }
 .colors {
     position: absolute;
-    top: 6%;
-    left: 70%;
+    top: 4%;
+    width: 8em;
+    right: 2.6em;
 }
 .colors div {
     width: 20px;
@@ -81,4 +81,71 @@ button:hover {
     border-radius: 3px;
     display: inline-block;
     border: 1px solid lightsteelblue;
+}
+@media (max-width: 450px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    .weather div {
+        width: 80%;
+        height: auto;
+        line-height: 4em;
+    }
+    img {
+        width: 80%;
+    }
+}
+@media (min-width: 450px) and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .weather-container {
+        height: 5em;
+    }
+    .weather {
+        width: 55%;
+        height: 5em;
+        line-height: 5em;
+    }
+    .colors {
+        right: 4.4em;
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    .weather-container {
+        height: 8em;
+    }
+    .weather {
+        width: 55%;
+        height: 8em;
+        line-height: 8em;
+    }
+    .colors {
+        right: 7.4em;
+    }
+}
+@media (min-width: 1200px) {
+    .content {
+        width: 935px;
+    }
+    .weather-container {
+        height: 9em;
+    }
+    .weather {
+        width: 48%;
+        height: 9em;
+        line-height: 9em;
+    }
+    .weather div {
+        width: 30%;
+    }
+    img {
+    width: 70%;
+    }
+    .colors {
+    right: 12.6em;
+    }
 }

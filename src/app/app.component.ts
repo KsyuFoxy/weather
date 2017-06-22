@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Http } from '@angular/http';
-
+import { Http, RequestOptions } from '@angular/http';
+import axios from 'axios';
 import { ColorSpectrumDirective } from './colors';
+axios.defaults.withCredentials = true;
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ColorSpectrumDirective } from './colors';
 })
 export class AppComponent {
   title = 'Weather in your City!';
-  cityName: string;
+  cityName: string = 'test';
   data: any;
   // cityName = 'London,uk';
   weatherLink: string;
@@ -24,6 +25,8 @@ export class AppComponent {
 
 constructor(http: Http) {
     this.http = http;
+    // axios.get('http://ec2-52-59-160-108.eu-central-1.compute.amazonaws.com:9000/weather?city=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9')
+    // .catch(e => console.log('error: ', e))
 }
 
     changeInput(newInput) {
@@ -36,11 +39,11 @@ constructor(http: Http) {
   getWeather(input: string) {
       if (input) {
           this.cityName = input;
-
-          this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9').subscribe( response => {
-            this.data = response.json();
-            console.log('data', this.data);
-        });
+        //   const options = new RequestOptions({withCredentials: true});
+        //   this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9', options).subscribe( response => {
+        //     this.data = response.json();
+        //     console.log('data', this.data);
+        // });
 
           console.log('cityName', this.cityName);
           this.weather = true;
