@@ -10,9 +10,9 @@ import { ColorSpectrumDirective } from './colors';
 })
 export class AppComponent {
   title = 'Weather in your City!';
-  // cityName: string;
+  cityName: string;
   data: any;
-  cityName = 'London,uk';
+  // cityName = 'London,uk';
   weatherLink: string;
   weather = false;
   inputValue;
@@ -20,13 +20,11 @@ export class AppComponent {
   @Output() inputChange = new EventEmitter();
 
   weatherImag = './images/SunCloud.png';
+  http: Http;
 
-// constructor(http: Http) {
-//     http.get('//api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9').subscribe( response => {
-//       this.data = response.json();
-//         console.log('data', this.data);
-//   });
-// }
+constructor(http: Http) {
+    this.http = http;
+}
 
     changeInput(newInput) {
         this.input = newInput;
@@ -38,7 +36,12 @@ export class AppComponent {
   getWeather(input: string) {
       if (input) {
           this.cityName = input;
-          this.weatherLink = '//api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9';
+
+          this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9').subscribe( response => {
+            this.data = response.json();
+            console.log('data', this.data);
+        });
+
           console.log('cityName', this.cityName);
           this.weather = true;
           this.inputValue = input;
