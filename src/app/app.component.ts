@@ -20,7 +20,8 @@ export class AppComponent {
   @Input() input: string;
   @Output() inputChange = new EventEmitter();
 
-  weatherImag = './images/SunCloud.png';
+  weatherImagBW = './src/app/images/Sun_BW.png';
+  weatherImag = './src/app/images/Sun.png';
   http: Http;
 
 constructor(http: Http) {

@@ -36,13 +36,24 @@ button:hover {
     background-color: darkslategray;
     color: white;
 }
+.weather-BW-img {
+    position: relative;
+    opacity: 0.3;
+    z-index: 0;
+}
+.weather-wrapper {
+    position: absolute;
+    top: 2.5em;
+}
 .weather-container {
+    position: relative;
     width: 70%;
     height: 18em;
     padding: 0.6em;
     margin: 1em auto;
     border-radius: 10px;
     background-color: lightsteelblue;
+    z-index: 1;
 }
 .weather {
     position: absolute;
@@ -130,12 +141,17 @@ button:hover {
 @media (min-width: 1200px) {
     .content {
         width: 935px;
+        height: 25em;
+    }
+    .weather-wrapper {
+        top: 4em;
+        width: 58em;
     }
     .weather-container {
         height: 9em;
     }
     .weather {
-        width: 48%;
+        width: 650px;
         height: 9em;
         line-height: 9em;
     }
@@ -143,9 +159,15 @@ button:hover {
         width: 30%;
     }
     img {
-    width: 70%;
+        width: 70%;
     }
     .colors {
-    right: 12.6em;
+        position: relative;
+        left: 813px;
+        top: -385px;
+    }
+    .weather-BW-img {
+        width: 500px;
+        left: -2em;
     }
 }
