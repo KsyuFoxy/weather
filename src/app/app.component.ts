@@ -60,7 +60,6 @@ constructor(http: Http) {
   //       //   this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9', options).subscribe( response => {
   //         this.http.get('http://ec2-52-59-160-108.eu-central-1.compute.amazonaws.com/api/single-weather?city=' + this.cityName, options).subscribe( response => {
   //           this.data = response.json();
-  //           console.log('data', this.data);
   //           this.weatherImag = './src/app/images/'+ this.data.weather[0].icon + '.png';
   //           this.temp = this.data.main.temp;
   //       });
@@ -69,6 +68,7 @@ constructor(http: Http) {
   //     } else if (input = ' ') {
   //         console.log('nothing choosen');
   //     }
+//       this.getForecast();
   // }
 
   getWeather(input: string) {
@@ -113,15 +113,15 @@ constructor(http: Http) {
             this.fDay = day;
             var days = this.fDays.push(day);
         }
+            console.log('fDays', this.fDays);
   }
-
-
 
   closeWeather() {
       this.weather = false;
       this.fDays = [];
       this.showForecast = true;
       this.inputValue = '';
+      this.input = '';
   }
 
 

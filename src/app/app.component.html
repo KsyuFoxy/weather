@@ -30,8 +30,8 @@
             <div class="weather-forecast__row-content">
                 <div *ngFor='let fDay of fDays' class="weather-forecast__row">
                     <span>{{fDay.date}}</span>
-                    <span>{{fDay.temp}}<span>°C</span></span>
-                    <img [src]='fDay.icon'>
+                    <span><img [src]='fDay.icon'></span>
+                    <span>{{fDay.temp}} °C</span>
                 </div>
             </div>
         </div>

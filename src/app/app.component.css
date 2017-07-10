@@ -162,7 +162,7 @@ button:hover {
         width: 56%;
     }
     .weather-forecast__row span {
-        padding: 0 2em;
+        padding: 0 1.5em;
     }
     .colors {
         right: 7.4em;
