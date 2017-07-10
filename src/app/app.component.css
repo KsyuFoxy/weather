@@ -36,15 +36,6 @@ button:hover {
     background-color: darkslategray;
     color: white;
 }
-.weather-BW-img {
-    position: relative;
-    opacity: 0.3;
-    z-index: 0;
-}
-.weather-wrapper {
-    position: absolute;
-    top: 2.5em;
-}
 .weather-container {
     position: relative;
     width: 70%;
@@ -56,17 +47,20 @@ button:hover {
     z-index: 1;
 }
 .weather {
-    position: absolute;
-    width: 53%;
+    width: 100%;
 }
 .weather div {
     display: inline-block;
     font-family: sans-serif;
-    width: 20%;
+    word-wrap: break-word;
+    width: 25%;
     line-height: 1em;
     vertical-align: middle;
     margin: 0 0.5em;
     color: darkslategray;
+}
+.weather img {
+    width: 70%;
 }
 .close {
     position: relative;
@@ -114,7 +108,7 @@ button:hover {
         height: 5em;
     }
     .weather {
-        width: 55%;
+        width: 92%;
         height: 5em;
         line-height: 5em;
     }
@@ -130,7 +124,7 @@ button:hover {
         height: 8em;
     }
     .weather {
-        width: 55%;
+        width: 95%;
         height: 8em;
         line-height: 8em;
     }
@@ -143,10 +137,6 @@ button:hover {
         width: 935px;
         height: 25em;
     }
-    .weather-wrapper {
-        top: 4em;
-        width: 58em;
-    }
     .weather-container {
         height: 9em;
     }
@@ -156,18 +146,11 @@ button:hover {
         line-height: 9em;
     }
     .weather div {
-        width: 30%;
-    }
-    img {
-        width: 70%;
+        width: 28%;
     }
     .colors {
         position: relative;
-        left: 813px;
-        top: -385px;
-    }
-    .weather-BW-img {
-        width: 500px;
-        left: -2em;
+        left: 805px;
+        top: 0;
     }
 }

@@ -11,23 +11,34 @@ axios.defaults.withCredentials = true;
 })
 export class AppComponent {
   title = 'Weather in your City!';
-  cityName: string = 'test';
+  cityName: string;
   data: any;
-  // cityName = 'London,uk';
   weatherLink: string;
   weather = false;
   inputValue;
   @Input() input: string;
   @Output() inputChange = new EventEmitter();
 
-  weatherImagBW = './src/app/images/Sun_BW.png';
-  weatherImag = './src/app/images/Sun.png';
   http: Http;
+  temp;
+  weatherImag;
+
+  // data = {"coord":{"lon":13.41,"lat":52.52},
+  //           "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],
+  //           "base":"stations",
+  //           "main":{"temp":20.49,"pressure":1008,"humidity":64,"temp_min":20,"temp_max":21},
+  //           "visibility":10000,
+  //           "wind":{"speed":2.1,"deg":70},
+  //           "clouds":{"all":0},
+  //           "dt":1499671200,
+  //           "sys":{"type":1,"id":4892,"message":0.0021,"country":"DE","sunrise":1499655377,"sunset":1499714801},
+  //           "id":2950159,
+  //           "name":"Berlin",
+  //           "cod":200}
+
 
 constructor(http: Http) {
     this.http = http;
-    // axios.get('http://ec2-52-59-160-108.eu-central-1.compute.amazonaws.com:9000/weather?city=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9')
-    // .catch(e => console.log('error: ', e))
 }
 
     changeInput(newInput) {
@@ -40,19 +51,34 @@ constructor(http: Http) {
   getWeather(input: string) {
       if (input) {
           this.cityName = input;
-        //   const options = new RequestOptions({withCredentials: true});
+          const options = new RequestOptions({withCredentials: true});
         //   this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=2e24ce1a5691ac298a7d48bb0d69efc9', options).subscribe( response => {
-        //     this.data = response.json();
-        //     console.log('data', this.data);
-        // });
-
-          console.log('cityName', this.cityName);
+          this.http.get('http://ec2-52-59-160-108.eu-central-1.compute.amazonaws.com/api/single-weather?city=' + this.cityName, options).subscribe( response => {
+            this.data = response.json();
+            console.log('data', this.data);
+            this.weatherImag = './src/app/images/'+ this.data.weather[0].icon + '.png';
+            this.temp = this.data.main.temp;
+        });
           this.weather = true;
           this.inputValue = input;
       } else if (input = ' ') {
           console.log('nothing choosen');
       }
   }
+
+  // getWeather(input: string) {
+  //     if (input) {
+  //         this.cityName = input;
+  //         this.weatherImag = './src/app/images/'+ this.data.weather[0].icon + '.png';
+  //         this.temp = this.data.main.temp;
+  //         console.log('data', this.data);
+  //         this.weather = true;
+  //         this.inputValue = input;
+  //     } else if (input = ' ') {
+  //         console.log('nothing choosen');
+  //     }
+  // }
+
   closeWeather() {
       this.weather = false;
       this.inputValue = '';

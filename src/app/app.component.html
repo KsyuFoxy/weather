@@ -1,8 +1,12 @@
 <div class="content" [color-spectrum]="color">
-    <div *ngIf='weather' class="weather-BW-img">
-        <img [src]="weatherImagBW" alt="weather_img_BW">
+    <div class="colors">
+        <div (click)="color='#ffd4e3'" [ngStyle]="{'background-color': '#ffd4e3'}"></div>
+        <div (click)="color='#d7d7fc'" [ngStyle]="{'background-color': '#d7d7fc'}"></div>
+        <div (click)="color='#fffad1'" [ngStyle]="{'background-color': '#fffad1'}"></div>
+        <div (click)="color='#dcffdc'" [ngStyle]="{'background-color': '#dcffdc'}"></div>
+        <div (click)="color='#e6e6fa'" [ngStyle]="{'background-color': '#e6e6fa'}"></div>
     </div>
-    <div class="weather-wrapper">
+    <div>
         <h1>{{title}}</h1>
         <input [(ngModel)]='input' (ngModelChange)='changeInput($event)' [value]="inputValue" type="text" name="search" value="" placeholder="your location..."/>
         <button (click)='getWeather(input)' type="button" name="button">Show</button>
@@ -14,7 +18,7 @@
             <div (click)='closeWeather()' class="close">X</div>
             <div class="weather">
                 <div>{{input}}</div>
-                <div>20 <span>°C</span></div>
+                <div>{{temp}} <span>°C</span></div>
                 <div>
                     <img [src]="weatherImag" alt="weather_img">
                 </div>
@@ -22,11 +26,4 @@
         </div>
     </div>
 
-    <div class="colors">
-        <div (click)="color='#ffd4e3'" [ngStyle]="{'background-color': '#ffd4e3'}"></div>
-        <div (click)="color='#d7d7fc'" [ngStyle]="{'background-color': '#d7d7fc'}"></div>
-        <div (click)="color='#fffad1'" [ngStyle]="{'background-color': '#fffad1'}"></div>
-        <div (click)="color='#dcffdc'" [ngStyle]="{'background-color': '#dcffdc'}"></div>
-        <div (click)="color='#e6e6fa'" [ngStyle]="{'background-color': '#e6e6fa'}"></div>
-    </div>
 </div>
