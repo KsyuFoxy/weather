@@ -23,7 +23,7 @@
                     <img [src]="weatherImag" alt="weather_img">
                 </div>
             </div>
-            <button (click)='getForecast()' type="button" name="forecastButton">{{forecustButton}}</button>
+            <button (click)='showWeatherForecast()' type="button" name="forecastButton">{{forecustButton}}</button>
         </div>
 
         <div *ngIf='showForecast' class="weather-forecast">
