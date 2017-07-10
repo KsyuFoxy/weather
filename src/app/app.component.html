@@ -9,7 +9,7 @@
     <div>
         <h1>{{title}}</h1>
         <input [(ngModel)]='input' (ngModelChange)='changeInput($event)' [value]="inputValue" type="text" name="search" value="" placeholder="your location..."/>
-        <button (click)='getWeather(input)' type="button" name="button">Show</button>
+        <button (click)='getWeather(input)' type="button">Show</button>
         <p>Weather in
             <span class='bold-span'>{{input}}</span>
         </p>
@@ -21,6 +21,17 @@
                 <div>{{temp}} <span>°C</span></div>
                 <div>
                     <img [src]="weatherImag" alt="weather_img">
+                </div>
+            </div>
+            <button (click)='getForecast()' type="button" name="forecastButton">{{forecustButton}}</button>
+        </div>
+
+        <div *ngIf='showForecast' class="weather-forecast">
+            <div class="weather-forecast__row-content">
+                <div *ngFor='let fDay of fDays' class="weather-forecast__row">
+                    <span>{{fDay.date}}</span>
+                    <span>{{fDay.temp}}<span>°C</span></span>
+                    <img [src]='fDay.icon'>
                 </div>
             </div>
         </div>

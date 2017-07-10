@@ -1,7 +1,7 @@
 .content {
     width: 80%;
     margin: 2em auto;
-    padding: 1em;
+    padding: 1em 1em 2em 1em;
     text-align: center;
     background-color: lavender;
     border-radius: 5px;
@@ -36,6 +36,13 @@ button:hover {
     background-color: darkslategray;
     color: white;
 }
+.weather-container button {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: -12px;
+    border: 1px solid white;
+}
 .weather-container {
     position: relative;
     width: 70%;
@@ -61,6 +68,26 @@ button:hover {
 }
 .weather img {
     width: 70%;
+}
+.weather-forecast {
+    background-color: lightsteelblue;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.weather-forecast__row {
+    width: 100%;
+    margin: 0 auto;
+}
+.weather-forecast__row:nth-of-type(1) {
+    padding-top: 20px;
+}
+.weather-forecast__row span {
+    padding: 0 0.8em;
+}
+.weather-forecast img {
+    width: 10%;
+    vertical-align: middle;
 }
 .close {
     position: relative;
@@ -112,6 +139,9 @@ button:hover {
         height: 5em;
         line-height: 5em;
     }
+    .weather-forecast {
+        width: 60%;
+    }
     .colors {
         right: 4.4em;
     }
@@ -128,6 +158,12 @@ button:hover {
         height: 8em;
         line-height: 8em;
     }
+    .weather-forecast {
+        width: 56%;
+    }
+    .weather-forecast__row span {
+        padding: 0 2em;
+    }
     .colors {
         right: 7.4em;
     }
@@ -135,7 +171,6 @@ button:hover {
 @media (min-width: 1200px) {
     .content {
         width: 935px;
-        height: 25em;
     }
     .weather-container {
         height: 9em;
@@ -147,6 +182,12 @@ button:hover {
     }
     .weather div {
         width: 28%;
+    }
+    .weather-forecast {
+        width: 50%;
+    }
+    .weather-forecast__row span {
+        padding: 0 30px;
     }
     .colors {
         position: relative;
