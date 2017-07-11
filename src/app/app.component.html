@@ -39,7 +39,12 @@
                 </div>
             </div>
         </div>
-        
+
+        <agm-map *ngIf='weather' [longitude]="lon" [latitude]="lat"  [zoom]="zoom">
+            <agm-marker [longitude]="lon" [latitude]="lat" [iconUrl]='mapMarker' [label]='label'></agm-marker>
+        </agm-map>
+
     </div>
+
 
 </div>

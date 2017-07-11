@@ -198,3 +198,9 @@ button:hover {
         top: 0;
     }
 }
+/*Google map*/
+agm-map {
+    position: relative;
+    top: 20px;
+    height: 300px;
+}
