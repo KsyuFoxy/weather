@@ -23,6 +23,9 @@ img {
 .bold-span {
     font-weight: bold;
 }
+.notification-span {
+    color: mediumvioletred;
+}
 button {
     width: 50px;
     padding: 7px;

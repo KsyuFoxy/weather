@@ -8,16 +8,20 @@
     </div>
     <div>
         <h1>{{title}}</h1>
-        <input [(ngModel)]='input' (ngModelChange)='changeInput($event)' [value]="inputValue" type="text" name="search" value="" placeholder="your location..."/>
+        <input [(ngModel)]='input' (ngModelChange)='changeInput($event)'
+                (click)='clearInput()' [value]="inputValue"
+                type="text" placeholder="your location..."/>
         <button (click)='getWeather(input)' type="button">Show</button>
-        <p>Weather in
+        <p>
+            <span *ngIf='!emptyInput'>Weather in </span>
             <span class='bold-span'>{{input}}</span>
+            <span *ngIf='emptyInput' class='notification-span'>Choose a city</span>
         </p>
 
         <div *ngIf='weather' class="weather-container">
             <div (click)='closeWeather()' class="close">X</div>
             <div class="weather">
-                <div>{{input}}</div>
+                <div>{{country}}, {{countryCode}}</div>
                 <div>{{temp}} <span>°C</span></div>
                 <div>
                     <img [src]="weatherImag" alt="weather_img">
@@ -35,6 +39,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
 </div>
