@@ -40,11 +40,12 @@
             </div>
         </div>
 
-        <agm-map *ngIf='weather' [longitude]="lon" [latitude]="lat"  [zoom]="zoom">
-            <agm-marker [longitude]="lon" [latitude]="lat" [iconUrl]='mapMarker' [label]='label'></agm-marker>
+        <agm-map *ngIf='weather' [longitude]="lon" [latitude]="lat" [zoom]="zoom" [scrollwheel]="scroll" [backgroundColor]="color">
+            <agm-marker #marker (markerClick)="changeMarker()" [longitude]="lon" [latitude]="lat" [iconUrl]='mapMarker' ></agm-marker>
         </agm-map>
 
     </div>
+    <drag-drop></drag-drop>
 
 
 </div>

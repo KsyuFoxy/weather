@@ -7,11 +7,13 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { ColorSpectrumDirective } from './colors';
+import { DragDropComponent } from './drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColorSpectrumDirective
+    ColorSpectrumDirective,
+    DragDropComponent
   ],
   imports: [
     BrowserModule,
